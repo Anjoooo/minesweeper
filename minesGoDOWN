@@ -1,17 +1,17 @@
 var mineCount=12
 var boardLength=8
-var isMine=[]
+var minePlace=[]
 for(var i = 0; i < mineCount; i++){
  xval=Math.floor(Math.random()*boardLength)
  yval=Math.floor(Math.random()*boardLength)
- isMine[i]=[xval, yval]
+ minePlace[i]=[xval, yval]
  //he generate points
  }
  for(var j=0; j<mineCount;j++){
    for( var k = j; k < mineCount; k++){
      if(k != j){
        if(JSON.stringify(isMine[k])==JSON.stringify(isMine[j])) {
-       isMine[j] = [Math.floor(Math.random()*boardLength),
+       minePlace[j] = [Math.floor(Math.random()*boardLength),
        Math.floor(Math.random()*boardLength)]
        
        k=0
@@ -21,4 +21,4 @@ for(var i = 0; i < mineCount; i++){
  }
  }
  //he check that no doubles
- console.log(isMine)
+ console.log(minePlace)
